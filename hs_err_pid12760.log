@@ -1,0 +1,204 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 130023424 bytes for Failed to commit area from 0x0000000084800000 to 0x000000008c400000 of length 130023424.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3386), pid=12760, tid=15860
+#
+# JRE version:  (11.0.21+9) (build )
+# Java VM: OpenJDK 64-Bit Server VM (11.0.21+9, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -XX:TieredStopAtLevel=1 -Xverify:none -Dspring.output.ansi.enabled=always -Dcom.sun.management.jmxremote -Dspring.jmx.enabled=true -Dspring.liveBeansView.mbeanDomain -Dspring.application.admin.enabled=true -Dmanagement.endpoints.jmx.exposure.include=* -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.1\lib\idea_rt.jar=50271:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.1\bin -Dfile.encoding=UTF-8 dev.spring.petclinic.PetclinicApplication
+
+Host: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz, 8 cores, 7G,  Windows 11 , 64 bit Build 22621 (10.0.22621.2428)
+Time: Fri Oct 27 10:54:20 2023  Windows 11 , 64 bit Build 22621 (10.0.22621.2428) elapsed time: 0.804209 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000002507f9b1800):  JavaThread "Unknown thread" [_thread_in_vm, id=15860, stack(0x000000eec6700000,0x000000eec6800000)]
+
+Stack: [0x000000eec6700000,0x000000eec6800000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x64601a]
+V  [jvm.dll+0x7d9b29]
+V  [jvm.dll+0x7db229]
+V  [jvm.dll+0x7db913]
+V  [jvm.dll+0x26a0a5]
+V  [jvm.dll+0x643239]
+V  [jvm.dll+0x6377b5]
+V  [jvm.dll+0x32618c]
+V  [jvm.dll+0x326012]
+V  [jvm.dll+0x32abe6]
+V  [jvm.dll+0x372f02]
+V  [jvm.dll+0x372961]
+V  [jvm.dll+0x3018c8]
+V  [jvm.dll+0x3029c5]
+V  [jvm.dll+0x7b2c27]
+V  [jvm.dll+0x7b43ef]
+V  [jvm.dll+0x3802c9]
+V  [jvm.dll+0x794d7f]
+V  [jvm.dll+0x3f0d67]
+V  [jvm.dll+0x3f3251]
+C  [jli.dll+0x52ef]
+C  [ucrtbase.dll+0x29363]
+C  [KERNEL32.DLL+0x1257d]
+C  [ntdll.dll+0x5aa78]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x000002507f331600, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000002507f9cb800 GCTaskThread "GC Thread#0" [stack: 0x000000eec6800000,0x000000eec6900000] [id=12536]
+  0x000002507f9fb000 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000eec6900000,0x000000eec6a00000] [id=28812]
+  0x000002507f9fc800 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000eec6a00000,0x000000eec6b00000] [id=8716]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffddc152307]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000002507f9aee20] Heap_lock - owner thread: 0x000002507f9b1800
+
+Heap address: 0x0000000084800000, size: 1976 MB, Compressed Oops mode: Non-zero based: 0x0000000084800000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (1 events):
+Event: 0.313 Loaded shared library C:\Users\gram\Desktop\jdk-11.0.21+9\bin\zip.dll
+
+
+Dynamic libraries:
+0x00007ff7b5760000 - 0x00007ff7b576e000 	C:\Users\gram\Desktop\jdk-11.0.21+9\bin\java.exe
+0x00007ffe2ecb0000 - 0x00007ffe2eec7000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffe2dd30000 - 0x00007ffe2ddf4000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffe2c5e0000 - 0x00007ffe2c986000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffe2c2e0000 - 0x00007ffe2c3f1000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffe18900000 - 0x00007ffe1891b000 	C:\Users\gram\Desktop\jdk-11.0.21+9\bin\VCRUNTIME140.dll
+0x00007ffe21820000 - 0x00007ffe21837000 	C:\Users\gram\Desktop\jdk-11.0.21+9\bin\jli.dll
+0x00007ffe2db80000 - 0x00007ffe2dd2d000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffe2c030000 - 0x00007ffe2c056000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffe2da50000 - 0x00007ffe2da79000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffe2c4c0000 - 0x00007ffe2c5d8000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffe2c240000 - 0x00007ffe2c2da000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffe19020000 - 0x00007ffe192b3000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.2361_none_2712ced57382f843\COMCTL32.dll
+0x00007ffe2de00000 - 0x00007ffe2dea7000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffe2e1c0000 - 0x00007ffe2e1f1000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffe215c0000 - 0x00007ffe215cc000 	C:\Users\gram\Desktop\jdk-11.0.21+9\bin\vcruntime140_1.dll
+0x00007ffde2f90000 - 0x00007ffde301d000 	C:\Users\gram\Desktop\jdk-11.0.21+9\bin\msvcp140.dll
+0x00007ffddbe40000 - 0x00007ffddca03000 	C:\Users\gram\Desktop\jdk-11.0.21+9\bin\server\jvm.dll
+0x00007ffe2d5e0000 - 0x00007ffe2d690000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffe2e090000 - 0x00007ffe2e136000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffe2df70000 - 0x00007ffe2e087000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffe2d690000 - 0x00007ffe2d698000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffe17b30000 - 0x00007ffe17b39000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffe22400000 - 0x00007ffe2240a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffe2d7f0000 - 0x00007ffe2d861000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffe25c50000 - 0x00007ffe25c84000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffe2b100000 - 0x00007ffe2b118000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffe1e910000 - 0x00007ffe1e920000 	C:\Users\gram\Desktop\jdk-11.0.21+9\bin\verify.dll
+0x00007ffe29b10000 - 0x00007ffe29d3e000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffe2e310000 - 0x00007ffe2e69a000 	C:\WINDOWS\System32\combase.dll
+0x00007ffe2d970000 - 0x00007ffe2da47000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ffe25c10000 - 0x00007ffe25c42000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffe2c990000 - 0x00007ffe2ca0a000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffe0cd20000 - 0x00007ffe0cd48000 	C:\Users\gram\Desktop\jdk-11.0.21+9\bin\java.dll
+0x00007ffe1e0c0000 - 0x00007ffe1e0ca000 	C:\Users\gram\Desktop\jdk-11.0.21+9\bin\jimage.dll
+0x00007ffe183d0000 - 0x00007ffe183de000 	C:\Users\gram\Desktop\jdk-11.0.21+9\bin\instrument.dll
+0x00007ffe0c930000 - 0x00007ffe0c948000 	C:\Users\gram\Desktop\jdk-11.0.21+9\bin\zip.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\gram\Desktop\jdk-11.0.21+9\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.2361_none_2712ced57382f843;C:\Users\gram\Desktop\jdk-11.0.21+9\bin\server
+
+VM Arguments:
+jvm_args: -XX:TieredStopAtLevel=1 -Xverify:none -Dspring.output.ansi.enabled=always -Dcom.sun.management.jmxremote -Dspring.jmx.enabled=true -Dspring.liveBeansView.mbeanDomain -Dspring.application.admin.enabled=true -Dmanagement.endpoints.jmx.exposure.include=* -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.1\lib\idea_rt.jar=50271:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.1\bin -Dfile.encoding=UTF-8 
+java_command: dev.spring.petclinic.PetclinicApplication
+java_class_path (initial): C:\Users\gram\Desktop\src-spring-petclinic-main\src-spring-petclinic-main\build\classes\java\main;C:\Users\gram\Desktop\src-spring-petclinic-main\src-spring-petclinic-main\build\resources\main;C:\Users\gram\.gradle\caches\modules-2\files-2.1\org.projectlombok\lombok\1.18.26\8f8cf0372abf564913e9796623aac4c8ea44025a\lombok-1.18.26.jar;C:\Users\gram\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-data-jpa\2.7.12\17fdcc9bc155a6e6459190078c3a37c7fce0ced8\spring-boot-starter-data-jpa-2.7.12.jar;C:\Users\gram\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-thymeleaf\2.7.12\2abc3b0955eb7aee9ae4a97b3c8e660b9f7846fb\spring-boot-starter-thymeleaf-2.7.12.jar;C:\Users\gram\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-web\2.7.12\aba3f96331e2cfa316d8ec7446804721120a0552\spring-boot-starter-web-2.7.12.jar;C:\Users\gram\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-aop\2.7.12\334620701ca6aa67c1258c67bbe65ae75607d25a\spring-boot-starter-aop-2.7.12.jar;C:\Users\gram\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-jdbc\2.7.12\e9cf3b67ddd74e7e0356a0eecf56475196a5e684\spring-boot-starter-jdbc-2.7.12.jar;C:\Users\gram\.gradle\caches\modules-2\files-2.1\jakarta.transaction\jakarta.transaction-api\1.3.3\c4179d48720a1e87202115fbed6089bdc4195405\jakarta.transaction-api-1.3.3.jar;C:\Users\gram\.gradle\caches\modules-2\files-2.1\jakarta.persistence\jakarta.persistence-api\2.2.3\8f6ea5daedc614f07a3654a455660145286f024e\jakarta.persistence-api-2.2.3.jar;C:\Users\gram\.gradle\caches\modules-2\files-2.1\org.hibernate\hibernate-core\5.6.15.Final\ab14b7cef1fdff654ca81923048a6034d6c7cfa7\hibernate-core-5.6.15.Final.jar;C:\Users\gram\.gradle\caches\modules-2\files-2.1\org.springframework.data\spring-data-jpa\2.7.12\a81f0cce406074c684b0237ed0795b00f750be3c\spring-data-jpa-2.7.12.jar;C:\Users\gram\.gradle\caches\m
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     bool BytecodeVerificationLocal                = false                                     {product} {command line}
+     bool BytecodeVerificationRemote               = false                                     {product} {command line}
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 130023424                                 {product} {ergonomic}
+     bool ManagementServer                         = true                                      {product} {command line}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 2071986176                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 7549744                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 244108496                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 0                                      {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     intx TieredStopAtLevel                        = 1                                         {product} {command line}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Users\gram\Desktop\jdk-11.0.21+9
+PATH=C:\Users\gram\Desktop\jdk-11.0.21+9\bin;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Zulu\zulu-17\bin\;C:\jdk1.8\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\PuTTY\;C:\Program Files\nodejs\;C:\Program Files\Bandizip\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\gram\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\gram\AppData\Local\Programs\Python\Python311\;C:\Users\gram\AppData\Local\Microsoft\WindowsApps;C:\Users\gram\AppData\Local\atom\bin;C:\Users\gram\AppData\Local\Microsoft\WindowsApps;;C:\Users\gram\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.1\bin;;C:\Users\gram\AppData\Roaming\npm
+USERNAME=gram
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
+TMP=C:\Users\gram\AppData\Local\Temp
+TEMP=C:\Users\gram\AppData\Local\Temp
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 11 , 64 bit Build 22621 (10.0.22621.2428)
+OS uptime: 13 days 17:36 hours
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 140 stepping 1 microcode 0x8a, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx, evex, sha, fma
+
+Memory: 4k page, system-wide physical 7900M (323M free)
+TotalPageFile size 32476M (AvailPageFile size 41M)
+current process WorkingSet (physical memory assigned to process): 11M, peak: 11M
+current process commit charge ("private bytes"): 57M, peak: 181M
+
+vm_info: OpenJDK 64-Bit Server VM (11.0.21+9) for windows-amd64 JRE (11.0.21+9), built on Oct 17 2023 22:10:05 by "" with MS VC++ 16.10 / 16.11 (VS2019)
+
+END.
