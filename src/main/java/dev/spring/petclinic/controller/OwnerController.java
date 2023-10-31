@@ -31,7 +31,7 @@ public class OwnerController {
     private static final String VIEWS_PET_CREATE_OR_UPDATE_FORM = "pets/createOrUpdatePetForm";
 
     private final OwnerService ownerService;
-    private final PetTypeService petTypeService;
+   // private final PetTypeService petTypeService;
 
     @GetMapping // localhost:8080/owners로 동작, 별도의 URL작성하지 않음
     public String processFindForm(Owner owner, BindingResult result, Model model) {
@@ -113,7 +113,7 @@ public class OwnerController {
     public String initAddPetForm(Model model, @PathVariable Long ownerId){
         model.addAttribute("owner", Owner.builder().build());
         model.addAttribute("pet", Pet.builder().build());
-        petTypeService.selectAll();
+       // petTypeService.selectAll();
 //        model.addAttribute("types", pet);
 
         return VIEWS_PET_CREATE_OR_UPDATE_FORM;
